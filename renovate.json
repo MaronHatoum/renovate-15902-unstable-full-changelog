@@ -1,4 +1,18 @@
 {
-  "extends": ["github>whitesource/merge-confidence:beta"],
-  "ignoreUnstable": false
-}
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "enabledManagers": [
+      "regex"
+    ],
+    "regexManagers": [
+      {
+        "fileMatch": [
+          "airbyte.yaml"
+        ],
+        "matchStrings": [
+          "# renovate: datasource=(?<datasource>[^\\s]*) depName=(?<depName>[^\\s]+)( versioning=(?<versioning>[^\\s]*))?.*\\n.*: [\"]?(?<currentValue>v?[^\"\\s]+)[\"]?\n"
+        ],
+        "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+      }
+    ],
+    "ignoreUnstable": false
+  }
