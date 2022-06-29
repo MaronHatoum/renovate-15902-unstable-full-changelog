@@ -8,6 +8,7 @@
         "fileMatch": [
           "airbyte.yaml"
         ],
+        "matchStrings": [],
         "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
       }
     ],
